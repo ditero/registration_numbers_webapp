@@ -1,91 +1,107 @@
-body {
-    background-color: dodgerblue;
+html, body {
+   background-color: #f4f7f8;
+   margin: left;
+   padding: 0;
+
+ }
+ .container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 0 10px;
+  background-color: #14213D;
+   border-style: solid;
+  border-top-width: 5px;
+  border-color: #14213D;
+  border: 2px solid #FFF;
+  border-radius: 10px;
+  position: inherit;
+  background-image: -webkit-linear-gradient(#90BFF0, #BC1324);
 
 }
 
-.container{
-    background-color: white;
-    width : 80%;
-    margin : auto;
-    padding : 1em;
-    font-family: "Arial"
-}
-
-.error {
-    color : red;
-}
-
-.success {
-    color : lightgreen;
-}
-
-.header {
-    display: inline;
-}
-
-label {
-    font-weight: bold;
-    width : 10em;
-    display: inline-block;
+.places {
+  margin: 50px auto;
+  padding: 20px 0px 0px 0px;
+  width: 50%;
+  border-style: solid;
+  border-top-width: 5px;
+  border-color: #14213D;
+  border: 2px solid #FFF;
+  border-radius: 10px;
+  background-color: #14213D;
+  color: #FFF;
+  background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 
 }
+h1{
+  text-align: center;
+  color: firebrick;
+  color: #FFF;
+  font-family: 'Amatic SC', cursive;
+  font-size: 35px;
+  padding: 14px;
 
-input[type='text'],
-input[type='email'],
-input[type='number'],
-select
-{
-    padding : 0.5em;
-    border : solid grey 0.05em;
+}
+p {
+  align-content:  center;
+    margin: 0 auto;
+  text-align-last: center;
+  display: block;
+  color: #FFF;
+}
+.choose{
+  align-content:  center;
+  margin: 1.5% auto;
+  text-align-last: center;
+  display: block;
+  color: #FFF;
+}
+h1{
+  align-content:  center;
+    margin: 5% auto;
+  text-align-last: center;
+  display: block;
+  color: #FFF;
+}
+h2{
+  margin: 5% auto;
+  text-align: right;
+  display: block;
+  color: #FFF;
+  font-size: 50px;
+}
+textarea {
+
+  align-content:  center;
+  width:250px;
+  display: block;
+  margin: 0% auto;
+  resize: none;
+  text-align: center;
+
 }
 
-input[type='submit']{
-    margin : 0.5em;
+button {
+  display: inline-block;
+  width:150px;
+  margin-left:68px;
+  margin-top: 5%;
+  align: center;
+  cursor: pointer;
+  background-color: #14213D;
+  color: #FFF;
+  font-family: 'Amatic SC', cursive;
+  font-size: 26px;
+  padding: 7px;
+  background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 }
-
-.menu {
-    margin-bottom: 1em;
-    display: inline;
+.radio{
+  align-content:  center;
+  display:inline;
+  margin-top: 5%;
+  width:20px;
+  margin-left:140px;
 }
-
-.menu ul {
-    list-style: none;
-    display: inline;
-}
-
-.menu ul {
-    list-style: none;
-}
-
-.menu li {
-    display: inline-block;
-    width : 7em;
-    text-align: center;
-}
-
-.menu li a {
-    display : block;
-    background-color: dodgerblue;
-    padding : 1em;
-}
-
-.menu li a:hover {
-    background-color: lightgrey;
-}
-
-.field{
-    margin : 0.5em;
-}
-
-.search{
-    margin-top: 5em;
-}
-
-.search input[type="text"] {
-    width: 20em;
-}
-
-.search input[type="submit"] {
-    width: 10em;
-    padding : 0.5em;
+.keepTrk{
+    margin-right: 10px;
 }
