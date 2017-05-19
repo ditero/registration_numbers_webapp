@@ -94,12 +94,12 @@ input[type='submit'] {
   padding: 7px;
   background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 }
-input[type='radio']{
+.radio{
   align-content:  center;
   display:inline;
-  margin-top: 5%;
+  margin: 15% auto;
   width:20px;
-  margin-left:140px;
+  margin-left:135px;
 }
 .keepTrk{
     margin-right: 10px;
