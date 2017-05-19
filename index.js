@@ -8,6 +8,7 @@
  app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
+
 // prase application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 

@@ -16,6 +16,7 @@ const index = function(req, res){
   res.render('myusers/index');
 };
 
+/////////////////////GREET SCREEN PAGE////////////////////////////
 const greetScreen = function(req, res){
   res.render("myusers/greet");
 
@@ -44,8 +45,8 @@ const greeted = function(req, res){
     uniqueList.push(user);
   }
   greetedUsers.push(user);
-    //res.redirect('/greeted');
-    res.send('/greetings',+ user +'!');
+    res.render('myusers/greet', {output: user});
+    //res.send('Hello, '+user +'!');
   }
 
 /////////////COUNTGREETINGS FUNCTION: COUNTS HOW TIMES A USER HAS BEEN GREETED///////
