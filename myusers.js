@@ -45,7 +45,7 @@ const greeted = function(req, res){
   }
   greetedUsers.push(user);
     //res.redirect('/greeted');
-    res.render('/greetings', {});
+    res.send('/greetings',+ user +'!');
   }
 
 /////////////COUNTGREETINGS FUNCTION: COUNTS HOW TIMES A USER HAS BEEN GREETED///////
