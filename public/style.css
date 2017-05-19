@@ -70,10 +70,10 @@ h2{
   color: #FFF;
   font-size: 50px;
 }
-textarea {
+input[type='text'] {
 
   align-content:  center;
-  width:250px;
+  width:225px;
   display: block;
   margin: 0% auto;
   resize: none;
@@ -81,21 +81,20 @@ textarea {
 
 }
 
-button {
+input[type='submit'] {
   display: inline-block;
-  width:150px;
-  margin-left:68px;
-  margin-top: 5%;
+  width:100px;
+  margin: 5% 40%;
   align: center;
   cursor: pointer;
-  background-color: #14213D;
+  background-color: #BC1324;
   color: #FFF;
   font-family: 'Amatic SC', cursive;
-  font-size: 26px;
+  font-size: 15px;
   padding: 7px;
   background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 }
-.radio{
+input[type='radio']{
   align-content:  center;
   display:inline;
   margin-top: 5%;
