@@ -28,7 +28,7 @@ html, body {
   border-color: #14213D;
   border: 2px solid #FFF;
   border-radius: 10px;
-  background-color: #14213D;
+  background-color: #FFF;
   color: #FFF;
   background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 
@@ -48,6 +48,11 @@ p {
   text-align-last: center;
   display: block;
   color: #FFF;
+}
+.error{
+  color: #FFF;
+  text-align-last: center;
+
 }
 .choose{
   align-content:  center;
@@ -92,6 +97,7 @@ input[type='submit'] {
   font-family: 'Amatic SC', cursive;
   font-size: 15px;
   padding: 7px;
+  border-radius: 15px;
   background-image: -webkit-linear-gradient(#FFD194, #BC1324);
 }
 .radio{

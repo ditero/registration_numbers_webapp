@@ -1,17 +1,22 @@
-<h1>Greet Someone</h1>
+<h1>Greetings webapp</h1>
 
 
 <form class="" action="/greetings" method="post">
   <input type="text" name="user" placeholder="Type your name here">
   <div class="radio">
-English<input type="radio" name="glan" value="Hello" checked>
-Afrikaans<input type="radio" name="glan" value="Hallo">
-IsiXhosa<input type="radio" name="glan" value="Molo">
+    English<input type="radio" name="selectedRadio" value="Hello">
+    Afrikaans<input type="radio" name="selectedRadio" value="Hallo">
+    IsiXhosa<input type="radio" name="selectedRadio" value="Molo">
 </div>
   <input type="submit"  value="Greet Me">
 </form>
-<div class="greetMessage">
 
-  <p>Hello, {{output}}</p>
-
+{{#if messages.error }}
+<div class="error">
+  {{messages.error}}
 </div>
+{{/if}}
+
+{{#if output}}
+  <p>Hello, {{output}}</p>
+{{/if}}

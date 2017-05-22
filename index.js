@@ -1,6 +1,8 @@
  const express = require('express');
  const exphbs = require('express3-handlebars');
  const bodyParser = require('body-parser');
+ const flash = require('express-flash');
+ const session = require('express-session');
  var greetUsers = require('./myusers');
  const app = express();
 
@@ -15,6 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// Use the session middleware
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
+app.use(flash());
 //Instantiate the routes
 var greetUsers = greetUsers();
 

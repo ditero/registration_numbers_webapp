@@ -21,19 +21,7 @@ const greetScreen = function(req, res){
   res.render("myusers/greet");
 
 };
-////////////////GREETED FUNCTION: RESPONDS WITH THE LIST OF GREETED USERS THAT HAVE LINKS/////
-const greeted = function(req, res){
-  //greetedUsers.forEach(function());
-  var list = [];
-  var user = getUser(req, res);
 
-  // uniqueList.forEach(function(user){
-  //   list.push("<a href= counter/" + user + ">" + user + "</a>");
-  // });
-
-  res.render('myusers/index',{myusers: uniqueList});
-
-}
 //////GREET FUNCTION: RESPONDS AND PUSHES NAMES TO AN ARRAY///////
   const greet = function(req, res){
   //  res.send('Greet a user');
@@ -41,12 +29,23 @@ const greeted = function(req, res){
   var foundUser = uniqueList.find(function(currentUser){
     return currentUser === user;
   });
-  if (user && !foundUser) {
-    uniqueList.push(user);
+  if (!user) {
+    req.flash('error', 'Name cannot be blank');
+
+  }
+  else {
+
+        if (!foundUser) {
+          uniqueList.push(user);
+        }
+        else {
+          req.flash('error', 'User already greeted!');
+        }
   }
   greetedUsers.push(user);
     res.render('myusers/greet', {output: user});
     //res.send('Hello, '+user +'!');
+    console.log(req.body.selectedRadio);
   }
 
 /////////////COUNTGREETINGS FUNCTION: COUNTS HOW TIMES A USER HAS BEEN GREETED///////
@@ -60,6 +59,20 @@ const greeted = function(req, res){
       }
       res.send('Hello, '+user + ' is greeted for the ' + count +' times');
 
+
+  }
+
+  ////////////////GREETED FUNCTION: RESPONDS WITH THE LIST OF GREETED USERS THAT HAVE LINKS/////
+  const greeted = function(req, res){
+    //greetedUsers.forEach(function());
+    var list = [];
+    var user = getUser(req, res);
+
+    // uniqueList.forEach(function(user){
+    //   list.push("<a href= counter/" + user + ">" + user + "</a>");
+    // });
+
+    res.render('myusers/index',{myusers: uniqueList});
 
   }
   return{
