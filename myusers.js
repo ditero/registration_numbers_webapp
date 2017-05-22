@@ -43,7 +43,8 @@ const greetScreen = function(req, res){
         }
   }
   greetedUsers.push(user);
-    res.render('myusers/greet', {output: user});
+  var myChoice = req.body.selectedRadio + ', '+user;
+    res.render('myusers/greet', {output: myChoice});
     //res.send('Hello, '+user +'!');
     console.log(req.body.selectedRadio);
   }

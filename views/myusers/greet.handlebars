@@ -3,6 +3,9 @@
 
 <form class="" action="/greetings" method="post">
   <input type="text" name="user" placeholder="Type your name here">
+  <h2 id="keepTrk" name='greetCount' value=0>0
+
+</h2>
   <div class="radio">
     English<input type="radio" name="selectedRadio" value="Hello">
     Afrikaans<input type="radio" name="selectedRadio" value="Hallo">
@@ -18,5 +21,5 @@
 {{/if}}
 
 {{#if output}}
-  <p>Hello, {{output}}</p>
+  <p>{{output}}</p>
 {{/if}}
