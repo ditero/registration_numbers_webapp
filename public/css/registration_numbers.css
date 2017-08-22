@@ -1,0 +1,15 @@
+#numPlate {
+  width: 120px;
+  margin: 10px 20px;
+  display: inline-block;
+  margin-bottom: 10px auto;
+  margin-left: 0 30px;
+  margin-right: 50px auto;
+  padding: 0 10px;
+  background-color: yellow;
+  border-style: solid;
+  border-top-width: 5px;
+  border-color: black;
+  border-radius: 10px;
+  position: inherit;
+}
