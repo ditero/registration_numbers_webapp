@@ -1,5 +1,5 @@
 {
-  "name": "greetings-webapp",
+  "name": "registration_numbers_webapp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express-session": "^1.15.3",
-    "mongodb":"*"
+    "mongodb":"*",
+    "mongoose":"*"
   }
 }
