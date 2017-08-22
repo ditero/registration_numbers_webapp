@@ -24,7 +24,7 @@ app.use(flash());
 //Instantiate the routes
 var register = registrations();
 
-app.get('/reg_number', register.main);
+app.get('/', register.main);
 app.post('/reg_number', register.bodyReg);
 app.get('/reg_number/:number', register.paramReg);
 
