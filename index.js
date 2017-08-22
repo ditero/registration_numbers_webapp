@@ -29,7 +29,7 @@ app.post('/reg_number', register.bodyReg);
 app.get('/reg_number/:number', register.paramReg);
 
 
- const port = 3001;
+ const port = 5000;
  app.listen(port, function(){
    console.log("Web app started on port: "+port);
  });
