@@ -29,7 +29,8 @@ app.post('/reg_number', register.bodyReg);
 app.get('/reg_number/:number', register.paramReg);
 
 
- const port = 5000;
- app.listen(port, function(){
-   console.log("Web app started on port: "+port);
- });
+app.set('port',(process.env.PORT || 5000) );
+
+app.listen(app.get('port'), function(){
+  console.log("Web app started on port: ", app.get('port'));
+});
