@@ -1,13 +1,27 @@
 <form class="" action="/reg_number" method="post">
   <div class="row">
     <div class="col-md-4"></div>
-      <div class="center-block">
-        <label for="registrationNum">Registration Number
+    <div class="col-md-6 center-block">
+      <label for="registrationNum">Registration Number
           <input type="text"class="form-control" id="registrationNum" name="regplate" value="">
         </label>
-        <input type="submit" class="btn text-center" name="" value="Add">
-      </div>
+      <input type="submit" class="btn text-center" name="" value="Add">
+
     </div>
+    <div id="col-md-4 radioBtns" class="btn-group">
+      <label class="btn btn-primary">
+        <input type="radio" name="selectedRadio" id="option1" name="selectedRadio" value="Hello"> Cape Town
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="selectedRadio" id="option2" name="selectedRadio" value="Goeie more"> Bellvile
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="selectedRadio" id="option3" name="selectedRadio" value="Molo"> Malmersbury
+      </label>
+    </div>
+  </div>
 
 </form>
-<p id="numPlate">{{registrationNum}}</p>
+{{#each registrationNum}}
+  <p id="numPlate">{{regnum}}</p>
+{{/each}}

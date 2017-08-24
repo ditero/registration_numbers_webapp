@@ -1,5 +1,15 @@
 'use strict'
-module.exports = function() {
+module.exports = function(models) {
+
+  ////////////////////////////FIND REGISTRATION NUMBERS FROM MONGOOSE DATABASE//////////////////////////////////
+const findCollection = function(cb) {
+  models.Registration.find({}).exec(function(err, results) {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, results);
+  });
+};
 
   const main = function(req, res){
     res.render('regview/regnumbers')
@@ -13,15 +23,29 @@ module.exports = function() {
 
   }
 
-  const bodyReg =function(req, res){
-    var postRegNum = req.body.regplate
-    res.render('regview/regnumbers', {
-      registrationNum : postRegNum
-    })
+  var listReg = []
+  const addReg =function(req, res, next){
+    var registration = {
+    regnum: req.body.regplate
+    }
+    listReg.push(registration.regnum);
+    models.Registration.create(registration, function(err, results){
+      if (err) {
+        return next(err);
+      }else {
+        findCollection(function(err, results){
+          res.render('regview/regnumbers', {
+            registrationNum : results
+          })
+        })
+      }
+    });
+
   }
+
 return{
   main,
   paramReg,
-  bodyReg
+  addReg
 }
 }

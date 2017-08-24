@@ -3,7 +3,12 @@
  const bodyParser = require('body-parser');
  const flash = require('express-flash');
  const session = require('express-session');
- var registrations = require('./functions/registrations');
+ const mongoURL = process.env.MONGO_DB_URL || 'mongodb://localhost/vehicleDB';
+ const Registrations = require('./functions/registrations');
+ const Models = require('./schema/models');
+ const models = Models(mongoURL);
+ //Instantiate the routes
+ const registerRoute = Registrations(models);
 
  const app = express();
 
@@ -21,12 +26,11 @@ app.use(bodyParser.json());
 // Use the session middleware
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
 app.use(flash());
-//Instantiate the routes
-var register = registrations();
 
-app.get('/', register.main);
-app.post('/reg_number', register.bodyReg);
-app.get('/reg_number/:number', register.paramReg);
+
+app.get('/', registerRoute.main);
+app.post('/reg_number', registerRoute.addReg);
+app.get('/reg_number/:number', registerRoute.paramReg);
 
 
 app.set('port',(process.env.PORT || 5000) );
