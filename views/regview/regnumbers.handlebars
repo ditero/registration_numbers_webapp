@@ -8,17 +8,38 @@
       <input type="submit" class="btn text-center" name="" value="Add">
 
     </div>
-    <div id="col-md-4 radioBtns" class="btn-group">
+  </div>
+
+</form>
+<br>
+{{#if messages.error }}
+<div class="text-danger error text-center">
+  {{messages.error}}
+</div>
+{{/if}}
+<form class="form" action="/town" method="post">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div id="radioBtns" class="btn-group">
       <label class="btn btn-primary">
-        <input type="radio" name="selectedRadio" id="option1" name="selectedRadio" value="Hello"> Cape Town
+        <input type="radio"  id="option1" name="town" value="CA"> Cape Town
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="selectedRadio" id="option2" name="selectedRadio" value="Goeie more"> Bellvile
+        <input type="radio"  id="option2" name="town" value="CY"> Bellville
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="selectedRadio" id="option3" name="selectedRadio" value="Molo"> Malmersbury
+        <input type="radio"  id="option3" name="town" value="CK"> Malmersbury
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio"  id="option3" name="town" value="CJ"> Paarl
       </label>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <input type="submit" class="col-md-2 btn  text-center btn-md" name="" value="Show Town">
+    <input type="button" class="col-md-2 btn text-center btn-md" name="" value="Show All">
+
   </div>
 
 </form>

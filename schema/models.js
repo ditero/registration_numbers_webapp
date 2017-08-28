@@ -4,12 +4,19 @@ module.exports = function (mongoURL) {
   mongoose.connect(mongoURL);
 
   const RegnumSchema = mongoose.Schema({
-    regnum : String
+    regnum: String
   });
 
-  const Registration = mongoose.model('Registration', RegnumSchema);
+  RegnumSchema.index({
+    regnum :    1
+  },
+    {
+      unique : true
+    });
+
+  const registrations = mongoose.model('registrations', RegnumSchema);
 
   return{
-    Registration
+    registrations
   }
 };

@@ -3,7 +3,8 @@ module.exports = function(models) {
 
   ////////////////////////////FIND REGISTRATION NUMBERS FROM MONGOOSE DATABASE//////////////////////////////////
 const findCollection = function(cb) {
-  models.Registration.find({}).exec(function(err, results) {
+  models.registrations.find({})
+  .exec(function(err, results) {
     if (err) {
       return cb(err);
     }
@@ -11,8 +12,12 @@ const findCollection = function(cb) {
   });
 };
 
-  const main = function(req, res){
-    res.render('regview/regnumbers')
+  const regnums = function(req, res){
+    findCollection(function(err, results){
+      res.render('regview/regnumbers', {
+        registrationNum : results
+      })
+    })
   }
 
   const paramReg = function(req, res){
@@ -23,29 +28,45 @@ const findCollection = function(cb) {
 
   }
 
-  var listReg = []
   const addReg =function(req, res, next){
     var registration = {
     regnum: req.body.regplate
     }
-    listReg.push(registration.regnum);
-    models.Registration.create(registration, function(err, results){
+    // listReg.push(registration.regnum);
+    models.registrations.create(registration, function(err, results){
       if (err) {
-        return next(err);
+        if (err.code === 11000) {
+          req.flash('error', 'This number already exits');
+          res.redirect('/reg_number');
+        }
+        // return next(err);
       }else {
-        findCollection(function(err, results){
-          res.render('regview/regnumbers', {
-            registrationNum : results
-          })
-        })
+        res.redirect('/reg_number');
       }
     });
 
   }
 
+
+const filterTown = function(req, res, next){
+  var regNumber = req.body.town;
+  models.registrations.find({regnum :{$regex: regNumber, $options: "x"}})
+  .exec(function(err, results){
+    if (err) {
+      return next(err);
+    }else {
+      res.render('regview/regnumbers',{
+        registrationNum : results
+      })
+    }
+  });
+
+};
+
 return{
-  main,
+  regnums,
   paramReg,
-  addReg
+  addReg,
+  filterTown
 }
 }

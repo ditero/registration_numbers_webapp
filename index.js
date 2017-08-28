@@ -3,10 +3,11 @@
  const bodyParser = require('body-parser');
  const flash = require('express-flash');
  const session = require('express-session');
- const mongoURL = process.env.MONGO_DB_URL || 'mongodb://localhost/vehicleDB';
+ const mongoURL = process.env.MONGO_DB_URL || 'mongodb://localhost/registrerDB';
  const Registrations = require('./functions/registrations');
  const Models = require('./schema/models');
  const models = Models(mongoURL);
+ 
  //Instantiate the routes
  const registerRoute = Registrations(models);
 
@@ -28,9 +29,11 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30}}));
 app.use(flash());
 
 
-app.get('/', registerRoute.main);
+app.get('/reg_number', registerRoute.regnums);
 app.post('/reg_number', registerRoute.addReg);
 app.get('/reg_number/:number', registerRoute.paramReg);
+app.get('/town', registerRoute.filterTown);
+app.post('/town', registerRoute.filterTown);
 
 
 app.set('port',(process.env.PORT || 5000) );
