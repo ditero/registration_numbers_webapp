@@ -37,12 +37,16 @@
   </div>
   <div class="row">
     <div class="col-md-4"></div>
-    <input type="submit" class="col-md-2 btn  text-center btn-md" name="" value="Show Town">
-    <input type="button" class="col-md-2 btn text-center btn-md" name="" value="Show All">
-
+    <div class="btn-group">
+      <input type="submit" class="col-md-6 btn  text-center btn-md" name="" value="Show Town">
+      <br>
+      <a href="/reg_number"><input type="button" class="btn text-center btn-md" name="" value="Show All"></a>
+    </div>
   </div>
 
 </form>
-{{#each registrationNum}}
+<div class="regTable">
+  {{#each registrationNum}}
   <p id="numPlate">{{regnum}}</p>
-{{/each}}
+  {{/each}}
+</div>

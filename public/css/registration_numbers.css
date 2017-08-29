@@ -13,3 +13,14 @@
   border-radius: 10px;
   position: inherit;
 }
+
+.regTable{
+    margin: 0 auto;
+    width: 50%;
+    border-top-width: 5px;
+    border-radius: 10px;
+    border-top-style: groove;
+    border-color: snow;
+    overflow-y: scroll;
+    height: 150px;
+}
