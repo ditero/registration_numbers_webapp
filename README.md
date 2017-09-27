@@ -8,6 +8,7 @@
 - Running the tests
 - Break down into end to end tests
 - Deployment
+- Built with
 - Contributing
 - Author
 - License
@@ -32,6 +33,8 @@ This porject is a web application that displays a registration number plate. The
 ||||||||||||||||||||||||||||||
 # Deployment
 ||||||||||||||||||||||||||||
+# Built with
+|||||||||||||||||||||||||||
 # Contributing
 ||||||||||||||||||||||||||||||
 # Author
