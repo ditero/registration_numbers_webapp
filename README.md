@@ -3,6 +3,8 @@
 - Synopsis
 - Getting Started
 - Installing
+- Running the Web Application
+- Example
 - Running the tests
 - Break down into end to end tests
 - Deployment
