@@ -20,6 +20,10 @@ This porject is a web application that displays a registration number plate. The
 
 # Getting Started
 |||||||||||||||||||||
+#  Running the Web Application
+|||||||||||||||||||||||||||||
+#  Example
+||||||||||||||||||||||||||||||
 # Installing
 |||||||||||||||||||||||||||||
 # Running the tests
