@@ -39,6 +39,6 @@ This porject is a web application that displays a registration number plate. The
 ||||||||||||||||||||||||||||||
 # Author
 Anele Sigenu
-anele@projectcodex.co
+Email: anele@projectcodex.co
 # License
 MIT
